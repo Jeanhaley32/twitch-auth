@@ -45,6 +45,7 @@ func (self TwitchAuth) NewTokenSet() error {
 	data.Set("client_id", self.ClientID)
 	data.Set("client_secret", self.Secret)
 	data.Set("grant_type", "client_credentials")
+	// Line for Testing
 	fmt.Println("URL: " + twitchURLPrefix + tokenURl + data.Encode())
 	req, err := http.NewRequest("POST", twitchURLPrefix+tokenURl, strings.NewReader(data.Encode()))
 	if err != nil {
@@ -65,6 +66,7 @@ func (self TwitchAuth) NewTokenSet() error {
 	if err := json.NewDecoder(resp.Body).Decode(&t); err != nil {
 		return err
 	}
+	// Line for Testing
 	fmt.Printf("access token: %v\n", t.AccessToken)
 	self.Token = t
 	return nil
