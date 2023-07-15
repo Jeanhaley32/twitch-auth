@@ -32,12 +32,6 @@ type token struct {
 
 type TwitchAuthInterface interface {
 	NewTokenSet()
-	remainingTime()
-}
-
-// Returns time until token expires
-func (self *TwitchAuth) remainingTime() int64 {
-	return self.Token.ExpiresIn
 }
 
 // Obtains a new Token set from the Twitch API
