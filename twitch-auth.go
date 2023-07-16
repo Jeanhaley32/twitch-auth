@@ -38,6 +38,7 @@ type token struct {
 type TwitchAuthInterface interface {
 	NewTokenSet()
 	Isexpired()
+	TimeTillExpiration()
 	String()
 }
 
