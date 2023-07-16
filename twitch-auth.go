@@ -80,23 +80,29 @@ func (self *TwitchAuth) NewTokenSet() error {
 	}
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
+	// Send Request to Twitch API
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return fmt.Errorf("Error getting token set: %v", err)
 	}
 
+	// Close the body when done reading from it
 	defer resp.Body.Close()
 
-	if err := json.NewDecoder(resp.Body).Decode(&t); err != nil {
-		fmt.Println("error decoding json")
-		return fmt.Errorf("Error Decoding Json (%v)", err)
+	// Read response body into a byte slice
+	b := make([]byte, resp.ContentLength)
+	resp.Body.Read(b)
+
+	// Decode the JSON response into the token struct
+	// Return error on failure.
+	if err := json.Unmarshal(b, &t); err != nil {
+		return fmt.Errorf("Error Decoding Json (%v) response Body: %v", err, string(b))
 	}
 
 	// Validate the token,return error if there is AccessToken is blank, or does not match regex
 	if t.AccessToken == "" || !re.MatchString(t.AccessToken) {
-		return fmt.Errorf("invalid token received: %q", t.AccessToken)
+		return fmt.Errorf("invalid token received %v Response Body: %v", t.AccessToken, string(b))
 	}
-
 	// Set the token, and the time it was received
 	self.Token = t
 	// Set the expiration time
