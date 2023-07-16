@@ -89,9 +89,10 @@ func (self *TwitchAuth) NewTokenSet() error {
 
 	if err := json.NewDecoder(resp.Body).Decode(&t); err != nil {
 		fmt.Println("error decoding json")
-		return fmt.Errorf("Error Deconding Json (%v)", err)
+		return fmt.Errorf("Error Decoding Json (%v)", err)
 	}
 
+	// Validate the token,return error if there is AccessToken is blank, or does not match regex
 	if t.AccessToken == "" || !re.MatchString(t.AccessToken) {
 		return fmt.Errorf("invalid token received: %q", t.AccessToken)
 	}
