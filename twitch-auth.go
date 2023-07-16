@@ -103,9 +103,9 @@ func (self *TwitchAuth) NewTokenSet() error {
 	if t.AccessToken == "" || !re.MatchString(t.AccessToken) {
 		return fmt.Errorf("invalid token received %v Response Body: %v", t.AccessToken, string(b))
 	}
-	// Set the token, and the time it was received
+
+	// Set the token, and the time that it will expire.
 	self.Token = t
-	// Set the expiration time
 	self.ExpirationTime = time.Now().Add(time.Duration(t.ExpiresIn) * time.Second)
 	return nil
 }
