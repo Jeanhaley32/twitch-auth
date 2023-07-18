@@ -42,6 +42,14 @@ type TwitchAuthInterface interface {
 	String()
 }
 
+// Returns Token
+func (self *TwitchAuth) GetToken() string {
+	if self.Token.AccessToken == "" {
+		return ""
+	}
+	return self.Token.AccessToken
+}
+
 // Returns Token Information as string.
 func (self *TwitchAuth) String() string {
 	return fmt.Sprintf("Token Expired: %v\nExpiration %v\n",
