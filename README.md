@@ -4,11 +4,6 @@
  Golang Library to obtain an [`app access token`](https://dev.twitch.tv/docs/authentication/#:~:text=grant%20flow.-,App%20access%20tokens,-APIs%20that%20don%E2%80%99t) using the [`client-credentials`](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-client-credentials-flow) work Flow for Twitch. 
  ___
 
-### Reason:
-  I want to work with the Twitch API on various potential future projects that utilize
-  Terminal User Interfaces. To make this easier, I want to create a modular library for
-  managing my Oauth2 tokens with Twitch. 
-
 ### Useful Links
 - [Twitch Authentication Dev Docs](https://dev.twitch.tv/docs/authentication/) - Definition of Token types.
 - [Oauth 2.0 White paper](https://datatracker.ietf.org/doc/html/rfc6749) - Informative doc on what & how Oauth2.0 actually works.
