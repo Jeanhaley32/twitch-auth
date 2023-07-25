@@ -14,6 +14,14 @@
 ### What This does:
 Uses the [client-credentials](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-client-credentials-flow) flow to retreive, verify, and refresh access tokens.
 
+### What you'll need
+You'll first need to [Register your app](https://dev.twitch.tv/docs/authentication/register-app/).
+This process should provide you with an `Application ID` and `Secret`.
+
+You can then populate the fields of the TwitchAuth struct, and run the `NewTokenSet()` struct method to populate the token field with
+a fresh token. 
+
+
 ### How this works:
 
 Import the twitchauth library
@@ -22,7 +30,7 @@ Import the twitchauth library
 import "github.com/jeanhaley32/twitchauth"
 ```
 
-Create a TwitchAuth object, and set the Client ID, and secret
+Create a TwitchAuth struct, and set the Client ID, and secret
 ```
 	auth := twitchauth.TwitchAuth{
 		ClientID: {clientID},
