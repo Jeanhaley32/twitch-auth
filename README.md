@@ -1,10 +1,8 @@
 🚧 **Work in Progress** 🚧
 
 # twitch-auth
- Client Credential Grant Flow for Twitch in Golang
+ Golang Library to obtain [`app access tokens`](https://dev.twitch.tv/docs/authentication/#:~:text=grant%20flow.-,App%20access%20tokens,-APIs%20that%20don%E2%80%99t) using the [client-credentials](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-client-credentials-flow) Flow for Twitch. 
  ___
-
-## Creating a Library for Oauth2 authentication with the Twich API.
 
 ### Reason:
   I want to work with the Twitch API on various potential future projects that utilize
@@ -12,7 +10,7 @@
   managing my Oauth2 tokens with Twitch. 
 
 ### What This does:
-Uses the [client-credentials](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-client-credentials-flow) flow to retreive, verify, and refresh access tokens.
+Uses the  flow to retreive, verify, and refresh access tokens.
 
 ### What you'll need
 You'll first need to [Register your app](https://dev.twitch.tv/docs/authentication/register-app/).
@@ -45,3 +43,6 @@ Run the NewTokenSet method to obtain a new token.
 `.Isexpired()` will return a bool showing if your token is expired.
 
 `.TimeTillExpiration()` Returns a time.duration until you token expires.
+
+### Useful Links
+[Twitch Authentication Dev Docs](https://dev.twitch.tv/docs/authentication/) - Definition of Token types. 
