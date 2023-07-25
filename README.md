@@ -1,7 +1,7 @@
 🚧 **Work in Progress** 🚧
 
 # twitch-auth
- Golang Library to obtain [`app access tokens`](https://dev.twitch.tv/docs/authentication/#:~:text=grant%20flow.-,App%20access%20tokens,-APIs%20that%20don%E2%80%99t) using the [client-credentials](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-client-credentials-flow) Flow for Twitch. 
+ Golang Library to obtain an [`app access token`](https://dev.twitch.tv/docs/authentication/#:~:text=grant%20flow.-,App%20access%20tokens,-APIs%20that%20don%E2%80%99t) using the [`client-credentials`](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-client-credentials-flow) work Flow for Twitch. 
  ___
 
 ### Reason:
