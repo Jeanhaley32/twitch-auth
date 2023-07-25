@@ -9,9 +9,6 @@
   Terminal User Interfaces. To make this easier, I want to create a modular library for
   managing my Oauth2 tokens with Twitch. 
 
-### What This does:
-Uses the  flow to retreive, verify, and refresh access tokens.
-
 ### What you'll need
 You'll first need to [Register your app](https://dev.twitch.tv/docs/authentication/register-app/).
 This process should provide you with an `Application ID` and `Secret`.
